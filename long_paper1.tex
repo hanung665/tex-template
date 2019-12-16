@@ -1,0 +1,303 @@
+\documentclass[a4paper, 12pt, oneside]{book}
+\usepackage[bahasa]{babel}
+\usepackage[a4paper, left=2.5cm, right=2cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage{lipsum}
+\usepackage{graphicx}
+
+%%%%%
+\usepackage{setspace}
+    \doublespace
+    %singlespace
+    %onehalfspace
+\usepackage{titlesec}
+    \titleformat*{\section}{\bf}
+    \titleformat*{\subsection}{\bf}
+\usepackage{indentfirst}
+\parindent=1.45cm
+\usepackage{float} % biar bisa force here buat gambar dan tabel
+%\usepackage[colorlinks=true,linkcolor=red]{hyperref}
+\usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \chead{}
+    \rhead{}
+    \lhead{}
+    \rfoot{}
+    \lfoot{}
+    \cfoot{\thepage}
+    \renewcommand{\headrulewidth}{0.0pt} %hapus garis di header
+    \renewcommand{\footrulewidth}{0.4pt} % garisnya dipindah ke sini
+
+%%%%%
+%\usepackage{hyphenation} %setelah kelar nulis baru cek pemenggalan kata, yang ga bener baru dikoreksi di sini
+    %\hyphenation{mung-kin, sa-ngar, mi-num}
+    
+\makeatletter
+    \renewcommand{\@makechapterhead}[1]{
+    \vspace*{0\p@}%
+    {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter
+      \center \MakeUppercase{\normalsize\bfseries \@chapapp\space \thechapter}
+      %\chapapp\space memunculkan kata "Bab"
+        \par\nobreak
+        \vskip 10\p@ % Mengatur jarak antara "Bab 1" dan "Pendahuluan"
+      \fi
+    \fi
+    \interlinepenalty\@M
+    \normalsize \uppercase{\bfseries #1\par\nobreak} %Bagian ini memunculkan judul bab
+    \vskip 30\p@ % Mengatur jarak antara "Bab 1" dengan "Teks"
+    }}
+\makeatother
+
+%%%%%
+%\usepackage{color}
+%Teks ini merah dan yang ini biru Kode:
+%    \textcolor{red}{Teks ini merah}\ \textcolor{blue}{dan yang ini biru}
+%\newcommand{\merah}[1]{\textcolor{red}{#1}}
+
+%%%%%
+% Kasih border hitam sekeliling gambar
+%\setlength\fboxsep{0pt}
+%    \setlength\fboxrule{2pt} % bagian ini untuk merubah tebal garis
+%    \fbox{\includegraphics{bab}}
+
+%%%
+%baris 1
+%\vspace{\baselineskip}
+%baris 2
+
+%%%%%
+% Buat nulis code snippets
+\usepackage{listings}
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    xleftmargin=15pt,
+    showstringspaces=false
+}
+
+%%%%%
+% Setting kedalaman section dan ToC section hingga 5 level
+%\setcounter{secnumdepth}{5}
+%\setcounter{tocdepth}{5}
+
+%%%%%
+% ubah ukuran font verbatim typewriter
+%\makeatletter
+%\g@addto@macro\@verbatim\footnotesize
+%\makeatother
+
+%%%%%
+% Lebar kolom fixed x cm
+
+%\usepackage{array}
+%\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+%\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+%\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+%
+%\begin{document}
+%
+%\begin{tabular}{| c | L{3cm} | C{3cm} | R{3cm} |}
+%foo &
+%A cell with text that wraps around, is raggedright and allows \newline
+%    manual line breaks &
+%A cell with text that wraps around, is centered and allows \newline
+%    manual line breaks &
+%A cell with text that wraps around, is raggedleft and allows \newline
+%    manual line breaks \\
+%\end{tabular}
+
+%\end{document}
+%%%%%
+
+\begin{document}
+
+%nopagenumbers
+
+\pagenumbering{roman}
+%\maketitle
+\begin{titlepage}
+\begin{center}
+%\fontsize{20pt}{20pt}\selectfont\bfseries
+%\linespread{1}\Large\bfseries
+\LARGE \textbf {RANCANG BANGUN SISTEM INFORMASI PENJEMPUTAN SISWA SEKOLAH}
+\end{center}
+
+\begin{center}
+{\Large (Studi Kasus SDN 1 Jombang)}
+\vspace{1cm}\\
+\end{center}
+
+\begin{center}
+{\large TUGAS AKHIR}
+\vspace{1cm}\\
+\large{Diajukan Untuk Memenuhi Salah Satu Syarat Dalam Menempuh Tugas Akhir Program Studi Sistem Informasi}
+\vfill
+\includegraphics[height=7cm]{logo.png}
+\vfill
+{\large Hanung Adi Wijaya\\
+1813070043}
+%\vspace{0.5in}\\
+%Under the direction of:\\
+%Dr. Super Famous Person\\
+%Massachusetts Institute of Technology
+\vspace{1cm}\\
+\large{
+PROGRAM STUDI SISTEM INFORMASI\\
+JURUSAN TEKNIK INFORMATIKA\\
+PERBANAS INSTITUTE\\
+2019}
+%\today
+\end{center}
+
+\end{titlepage}
+\frontmatter
+\subsection*{Ucapan Terima Kasih}
+\addcontentsline{toc}{subsection}{Ucapan Terima Kasih}
+Isi halaman preface / foreword / pengantar / terima kasih
+
+\newpage
+\section*{Lembar Pengesahan}
+\addcontentsline{toc}{subsection}{Lembar Pengesahan}
+Isi halaman lembar pengesahan
+
+\tableofcontents
+\listoffigures
+\listoftables
+\newpage
+%\chapter{ABSTRACT}
+%\begin{abstract}
+\begin{center}
+%\linespread{2}
+\textbf{ABSTRACT}\\
+STUDENT PICK UP INFORMATION SYSTEM\\
+(Case Study SDN 1 Jombang)\\
+Hanung Adi Wijaya\\
+\vspace{1cm}
+\end{center}
+{\sf \lipsum[1]}\\
+\lipsum[2]\\
+\lipsum[3]\\
+%\end{abstract}
+
+%\newpage
+\pagenumbering{arabic}
+\mainmatter
+\chapter{Pendahuluan}
+\section{Latar Belakang}
+
+%\begin{abstract}
+%\input{abstract}
+%\vspace{1in}
+%\input\{Summary}
+%\end{abstract}
+\subsection{Sosiokultural}
+%\subsubsection{Masyarakat}
+%\paragraph{\emph{\lipsum[1]}}
+%\subparagraph{\textit{\lipsum[1]}}
+\textsl{\lipsum[1]}
+
+rm:
+
+\textrm{\lipsum[4]}
+
+No formatting:
+
+\lipsum[4]
+
+Tiny:
+
+{\tiny \lipsum[4]}
+
+Scriptsize:
+
+{\scriptsize \lipsum[4]}
+
+Footnote size:
+
+{\footnotesize \lipsum[4]}
+
+Small:
+
+{\small \lipsum[4]}
+
+Normal size:
+
+{\normalsize \lipsum[4]}
+
+large:
+
+{\large \lipsum[4]}
+
+Large:
+
+{\Large \lipsum[4]}
+
+LARGE:
+
+{\LARGE \lipsum[4]}
+
+huge:
+
+{\huge \lipsum[4]}
+
+Huge:
+
+{\Huge\lipsum[4]}
+
+\textsf{SF: \lipsum[5]}
+
+\textit{IT: \lipsum[6]}
+
+\textsc{SC: \lipsum[7]}
+
+\vspace{1cm}
+\begin{flushright}
+TT:
+
+%\begin{quote}
+\texttt{\lipsum[8]}
+%\end{quote}
+
+\begin{enumerate}
+\item Ini item satu.
+\item Ini item dua.
+
+Ini bagian dari item dua.
+\item Ini item ketiga.
+\item dan ini item terakhir
+\end{enumerate}
+\end{flushright}
+Carrots are good for your eyes \cite{les85}, since they contain Vitamin A\@. Have you ever seen a rabbit wearing glasses?  The numbers 1, 2, 3, etc.\ are called \lq natural numbers\rq. According to Kronecker, they were made by \lq\lq God\rq\rq; all else being the work of Man. And this is sample of footnote\footnote{\label{myfootnote}This footnote is sponsored by DMR Project}.
+
+And I'm referring to footnote \ref{myfootnote}, said that this is should be awesome. \lipsum[4]
+
+\lipsum[5]
+\lipsum[6]
+%\newpage
+\chapter{Landasan Teori}
+\lipsum[7-15]
+\chapter{Metode Penelitian}
+\section{Pengumpulan Data}
+\lipsum[16-21]
+\chapter{Pembahasan}
+\lipsum[22-30]
+\chapter{Kesimpulan}
+\lipsum[31-35]
+\newpage
+\begin{glossary}
+Kholid Fuadi, dkk., {\it Panduan Menulis Tesis dengan \LaTeX\
+edisi I} (Yogyakarta: Banteng Press, 2011), hlm. 176. 
+\end{glossary}
+%\begin{thereference}
+%\end{thereference}
+\begin{thebibliography}{10}
+\bibitem{les85}Leslie Lamport, 1985. \emph{\LaTeX---A Document Preparation System---User’s Guide and Reference Manual}, Addision-Wesley, Reading.
+\bibitem{don89}Donald E. Knuth, 1989. \emph{Typesetting Concrete Mathematics}, TUGBoat, 10(1):31-36.
+\bibitem{rondon89}Ronald L. Graham, Donald E. Knuth, and Ore Patashnik, 1989. \emph{Concrete Mathematics: A Foundation for Computer Science}, Addison-Wesley, Reading.
+\bibitem{kholid}Kholid Fuadi, dkk., {\it Panduan Menulis Tesis dengan \LaTeX\
+edisi I} (Yogyakarta: Banteng Press, 2011), hlm. 176. 
+\end{thebibliography}
+\end{document}

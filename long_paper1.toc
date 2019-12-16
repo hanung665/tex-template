@@ -1,0 +1,11 @@
+\babel@toc {bahasa}{}
+\contentsline {subsection}{Ucapan Terima Kasih}{i}% 
+\contentsline {subsection}{Lembar Pengesahan}{ii}% 
+\contentsline {chapter}{\numberline {1}Pendahuluan}{1}% 
+\contentsline {section}{\numberline {1.1}Latar Belakang}{1}% 
+\contentsline {subsection}{\numberline {1.1.1}Sosiokultural}{1}% 
+\contentsline {chapter}{\numberline {2}Landasan Teori}{8}% 
+\contentsline {chapter}{\numberline {3}Metode Penelitian}{11}% 
+\contentsline {section}{\numberline {3.1}Pengumpulan Data}{11}% 
+\contentsline {chapter}{\numberline {4}Pembahasan}{13}% 
+\contentsline {chapter}{\numberline {5}Kesimpulan}{16}% 
